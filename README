@@ -6,10 +6,9 @@ This project is licenced under the terms of GNU General Public Licence v3.0
 
 # Structure
 The library will be consist of two classes. Matrix and Vector. 
-Vector will be based on Matrix which is nx1 matrix.
+Vector is nx1 matrix and will be based on Matrix.
 They will share all necessary functions.
-I will try to use overwriting of functions as many as possible to achive
-gneric coding
+I will try to use overwriting whenever it is possible to make code maximally generic
 
 Error handling code will be defined in Errors.h
 
