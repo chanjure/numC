@@ -44,17 +44,17 @@ class Matrix{
 		Matrix operator*(double a);
 		Matrix operator/(const Matrix &A);
 		Matrix operator/(double a);
-		Matrix operator@(const Matrix &A);
 
 		// Matrix operation
+		double* shape(); // CJ : Maybe move to Util
 		Matrix flat();
 		double trace();
 		Matrix T();
 		Matrix diag();
 		Matrix det();
 		Matrix inv();
-		Matrix c_(Matrix, Matrix);
-		Matrix r_(Matrix, Matrix);
+		Matrix c_(Matrix);
+		Matrix r_(Matrix);
 };
 
 // ============
@@ -69,7 +69,19 @@ class Vector{
 
 }
 
-// Functions
-extern double ftn(double, double);
+// ==================
+// External functions
+// ==================
+
+// Elementwise Operations
+Matrix add(Matrix, Matrix);
+Matrix sub(Matrix, Matrix);
+Matrix mul(Matrix, Matrix);
+Matrix div(Matrix, Matrix);
+
+// Matrix Operatoins
+Matrix matmul(Matrix, Matrix);
+Matrix c_(Matrix, Matrix);
+Matrix r_(Matrix, Matrix);
 
 #endif

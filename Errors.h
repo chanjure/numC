@@ -1,8 +1,8 @@
 //==========================================//
 //																					//
-// numC.C																		//
+// Errors.h																	//
 // ----------------------------------------	//
-// numpy like libaray for C/C++							//
+// General error handler for numC						//
 //																					//
 // ----------------------------------------	//
 // Mar 21, 2021															//
@@ -11,24 +11,13 @@
 //																					//
 //==========================================//
 
+#ifndef ERRORS_H
+#define ERRORS_H
+
 // Library dependencies
 #include "numC.h"
 
-//==============
-// Function name
-// -------------
-// description
-// -------------
-// Parameters:
-// 
-// Returns:
-//
-// Example:
-//
-// -------------
-// Tag : ftn	
-//==============
-double ftn(double x, double y){
-	
-	return 0.;
-}
+// ExampleFunctions
+extern double ftn(double, double);
+
+#endif

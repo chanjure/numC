@@ -11,8 +11,7 @@ They will share all necessary functions.
 I will try to use overwriting of functions as many as possible to achive
 gneric coding
 
-# Features to add
-1. Basic Matrix/Vector algebra
-2. Easy acces to shape.
-3. Return type function
-4. 
+Error handling code will be defined in Errors.h
+
+Utility functions such as generic print function will be defined in Utils.h
+
