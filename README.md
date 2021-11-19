@@ -1,5 +1,7 @@
 # numC - numpy like C toolkit
 ---
+** This toolkit is currently under construction. **
+---
 
 ## Installation
 ```
