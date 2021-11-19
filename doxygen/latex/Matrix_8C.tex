@@ -1,0 +1,591 @@
+\hypertarget{Matrix_8C}{}\subsection{Matrix.\+C File Reference}
+\label{Matrix_8C}\index{Matrix.\+C@{Matrix.\+C}}
+
+
+Various matrix operations.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$num\+C/\+Matrix.\+h$>$}\newline
+Include dependency graph for Matrix.\+C\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{Matrix_8C__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double $\ast$$\ast$ \hyperlink{Matrix_8C_a66ed07559a4d20174040e69f551a5431}{sum} (double $\ast$$\ast$mat1, double $\ast$$\ast$mat2, int a, int b)
+\begin{DoxyCompactList}\small\item\em Elementwise summation. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{Matrix_8C_a238af1517ec23a6f0279ec5ee6364d6a}{sub} (double $\ast$$\ast$mat1, double $\ast$$\ast$mat2, int a, int b)
+\begin{DoxyCompactList}\small\item\em Elementwise subtraction. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{Matrix_8C_a74a9fe9c1d326c41a69926c97720f4d2}{matmul} (double $\ast$$\ast$mat1, double $\ast$$\ast$mat2, int a, int b, int c)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMatrix}{Matrix} multiplication. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{Matrix_8C_ab64223fbcc37cc3af54071e71067d05a}{transpose} (double $\ast$$\ast$mat, int a, int b)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMatrix}{Matrix} transpose. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{Matrix_8C_affa4629470e427c236e2a7ac925e4e73}{identity} (int a, double val)
+\begin{DoxyCompactList}\small\item\em Identity matrix. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{Matrix_8C_a8f5f4f6401312604aebc715cca176985}{mat\+\_\+copy} (double $\ast$$\ast$mat, int a, int b)
+\begin{DoxyCompactList}\small\item\em Hard copy matrix. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{Matrix_8C_a19adaf60a005ffeb9071a395d0ee069f}{inverse} (double $\ast$$\ast$A, int a, int b)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMatrix}{Matrix} left inverse. \end{DoxyCompactList}\item 
+double $\ast$$\ast$ \hyperlink{Matrix_8C_ab8a4d647abae3e1b8dd318f1db696bc6}{zero} (int a, int b)
+\begin{DoxyCompactList}\small\item\em Initialize matrix. \end{DoxyCompactList}\item 
+void \hyperlink{Matrix_8C_a9c8e250ed43efa25186112ef66e4491f}{print} (double $\ast$$\ast$A, int a, int b)
+\begin{DoxyCompactList}\small\item\em Print matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Various matrix operations. 
+
+\begin{DoxyDate}{Date}
+Mar 19, 2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+C J Park ~\newline
+ \href{mailto:chanjure@snu.ac.kr}{\tt chanjure@snu.\+ac.\+kr} 
+\end{DoxyAuthor}
+
+
+\subsubsection{Function Documentation}
+\mbox{\Hypertarget{Matrix_8C_affa4629470e427c236e2a7ac925e4e73}\label{Matrix_8C_affa4629470e427c236e2a7ac925e4e73}} 
+\index{Matrix.\+C@{Matrix.\+C}!identity@{identity}}
+\index{identity@{identity}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{identity()}{identity()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ identity (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{double}]{val = {\ttfamily 1.} }\end{DoxyParamCaption})}
+
+
+
+Identity matrix. 
+
+create identity matrix of given size square matrix will be created
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em a} & (int) dimension of identity matrix \\
+\hline
+{\em val} & (double) value to initalize (default = 1.)\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double$\ast$$\ast$) identity matrix
+\end{DoxyReturn}
+Example\+:
+
+A = identity(3, 0.\+5);
+
+Tag\+: identity initalize 
+
+Definition at line 88 of file Matrix.\+C.
+
+
+
+Referenced by inverse().
+
+
+\begin{DoxyCode}
+88                                     \{
+89     \textcolor{keyword}{static} \textcolor{keywordtype}{double}** result;
+90 
+91     result = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[a];
+92     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++) *(result+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [a];
+93 
+94     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+95         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<a;j++)\{
+96             \textcolor{keywordflow}{if}(i==j) *(*(result+i)+j) = val;
+97             \textcolor{keywordflow}{else} *(*(result+i)+j) = 0.;
+98         \}
+99     \}
+100 
+101     \textcolor{keywordflow}{return} result;
+102 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8C_a19adaf60a005ffeb9071a395d0ee069f}\label{Matrix_8C_a19adaf60a005ffeb9071a395d0ee069f}} 
+\index{Matrix.\+C@{Matrix.\+C}!inverse@{inverse}}
+\index{inverse@{inverse}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ inverse (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMatrix}{Matrix} left inverse. 
+
+\hyperlink{classMatrix}{Matrix} left inverse using Gaussian reduction
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (double$\ast$$\ast$) matrix to inverse \\
+\hline
+{\em a} & (int) number of rows of A \\
+\hline
+{\em b} & (int) number of columns of A\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double$\ast$$\ast$) left inverse of A
+\end{DoxyReturn}
+Example\+:
+
+A\+\_\+inv = inverse(\+A,2,2);
+
+Tag\+: left inverse gaussian reduction 
+
+Definition at line 117 of file Matrix.\+C.
+
+
+
+References identity(), mat\+\_\+copy(), matmul(), print(), and transpose().
+
+
+\begin{DoxyCode}
+117                                           \{
+118 
+119     \textcolor{keyword}{static} \textcolor{keywordtype}{double}** result; \textcolor{comment}{// output matmul(invsqA, A.T)}
+120     \textcolor{keywordtype}{double}** sqA; \textcolor{comment}{// squarized matrix = matmul(A.transpose, A)}
+121     \textcolor{keywordtype}{double}** invsqA; \textcolor{comment}{// inverse of squared A}
+122     \textcolor{keywordtype}{double}** A\_t; \textcolor{comment}{// Transposed matrix}
+123     \textcolor{keywordtype}{double}* row; \textcolor{comment}{// Temporary row container}
+124     \textcolor{keywordtype}{double}* invrow; \textcolor{comment}{// Temporary row container for inverse matrix - memorize sort order}
+125     \textcolor{keywordtype}{double} det; \textcolor{comment}{// determinant}
+126     \textcolor{keywordtype}{double} pivot;
+127 
+128     \textcolor{keyword}{const} \textcolor{keywordtype}{double} tol = 1e-14;
+129 
+130     result = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[b];
+131     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<b;i++) *(result+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [a];
+132 
+133     sqA = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[b];
+134     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<b;i++) *(sqA+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [b];
+135 
+136     invsqA = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[b];
+137     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<b;i++) *(invsqA+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [b];
+138 
+139     row = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [b];
+140 
+141     \textcolor{comment}{// Initially identity matrix for inverse matrix container.}
+142     invsqA = \hyperlink{Matrix_8C_affa4629470e427c236e2a7ac925e4e73}{identity}(b); 
+143         
+144     \textcolor{comment}{// Initialize transposed matrix.}
+145     A\_t = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[b];
+146     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<b;i++) *(A\_t+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [b];
+147     
+148     \textcolor{keywordflow}{if}(a!=b)\{    
+149         A\_t = \hyperlink{Matrix_8C_ab64223fbcc37cc3af54071e71067d05a}{transpose}(A,a,b);
+150         \textcolor{comment}{// Squarize the matrix}
+151         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<b;i++)\{
+152             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++)\{
+153                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0;k<a;k++)\{
+154                     *(*(sqA+i)+j) = *(*(A\_t+i)+k) * *(*(A+k)+j);
+155                 \}
+156             \}
+157         \}
+158     \}
+159     \textcolor{keywordflow}{else}\{
+160         A\_t = \hyperlink{Matrix_8C_affa4629470e427c236e2a7ac925e4e73}{identity}(a);
+161         sqA = \hyperlink{Matrix_8C_a8f5f4f6401312604aebc715cca176985}{mat\_copy}(A,a,a);
+162     \}
+163 
+164     \textcolor{comment}{// Sort pivot}
+165     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++)\{
+166         \textcolor{keywordtype}{int} i = 1;
+167         \textcolor{keywordflow}{while}(*(*(sqA+j)+j) <=tol && i<b)\{
+168             \textcolor{comment}{// Save zero pivot row}
+169             row = *(sqA+j);
+170             invrow = *(invsqA+j);
+171             
+172             \textcolor{comment}{// Exchange with row below}
+173             *(sqA+j) = *(sqA+j+i);
+174             *(invsqA+j) = *(invsqA+j+i);
+175 
+176             *(sqA+j+i) = row;
+177             *(invsqA+j+i) = invrow;
+178 
+179             i++;
+180         \}
+181     \}
+182     \hyperlink{Matrix_8C_a9c8e250ed43efa25186112ef66e4491f}{print}(sqA,3,3);
+183 
+184     \textcolor{comment}{// Gauss Jordan method}
+185     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<b;i++)\{
+186         \textcolor{comment}{// Scale}
+187         pivot = *(*(sqA+i)+i);
+188         printf(\textcolor{stringliteral}{"pivot : %f\(\backslash\)n"},pivot);
+189         \textcolor{keywordflow}{if}(pivot!=1.)\{
+190             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++)\{
+191                 *(*(invsqA+i)+j)/=pivot;
+192                 *(*(sqA+i)+j)/=pivot;
+193             \}
+194         \}
+195         \textcolor{comment}{// Subtraction}
+196         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++)\{
+197             \textcolor{keywordflow}{if}(j!=i)\{
+198                 \textcolor{keywordtype}{double} target = *(*(sqA+j)+i);
+199                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0;k<b;k++)\{
+200                     *(*(invsqA+j)+k) -= *(*(invsqA+i)+k) * target;
+201                     *(*(sqA+j)+k) -= *(*(sqA+i)+k) * target;
+202                 \}
+203             \}
+204         \}
+205     \}
+206 
+207     result = \hyperlink{Matrix_8C_a74a9fe9c1d326c41a69926c97720f4d2}{matmul}(invsqA, A\_t, b,b,a);
+208 
+209     \textcolor{keywordflow}{return} result;
+210 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8C_a8f5f4f6401312604aebc715cca176985}\label{Matrix_8C_a8f5f4f6401312604aebc715cca176985}} 
+\index{Matrix.\+C@{Matrix.\+C}!mat\+\_\+copy@{mat\+\_\+copy}}
+\index{mat\+\_\+copy@{mat\+\_\+copy}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{mat\+\_\+copy()}{mat\_copy()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ mat\+\_\+copy (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Hard copy matrix. 
+
+create hard copy of given matrix
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em mat} & (double$\ast$$\ast$) matrix to copy \\
+\hline
+{\em a} & (int) number of rows of mat \\
+\hline
+{\em b} & (int) number of columns of mat\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double$\ast$$\ast$) hard copy of mat
+\end{DoxyReturn}
+Example\+:
+
+A = mat\+\_\+copy(\+B,3,3);
+
+Tag\+: ftn 
+
+Definition at line 104 of file Matrix.\+C.
+
+
+
+Referenced by inverse().
+
+
+\begin{DoxyCode}
+104                                              \{
+105     \textcolor{keyword}{static} \textcolor{keywordtype}{double}** result;
+106 
+107     result = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[a];
+108     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++) *(result+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [b];
+109 
+110     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+111         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++) *(*(result+i)+j) = *(*(mat+i)+j);
+112     \}
+113 
+114     \textcolor{keywordflow}{return} result;
+115 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8C_a74a9fe9c1d326c41a69926c97720f4d2}\label{Matrix_8C_a74a9fe9c1d326c41a69926c97720f4d2}} 
+\index{Matrix.\+C@{Matrix.\+C}!matmul@{matmul}}
+\index{matmul@{matmul}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{matmul()}{matmul()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ matmul (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{,  }\item[{double $\ast$$\ast$}]{,  }\item[{int}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMatrix}{Matrix} multiplication. 
+
+mat1 $\ast$ mat2 = result number of column of mat1 must match number of column of mat2
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em mat1,mat2} & (double$\ast$$\ast$) matrices to be multiplied \\
+\hline
+{\em a} & (int) number of rows of mat1 \\
+\hline
+{\em b} & (int) number of folumns of mat1 = number of rows of mat2 \\
+\hline
+{\em c} & (int) number of columns of mat2\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double$\ast$$\ast$) matrix of dimension a x c
+\end{DoxyReturn}
+Example\+:
+
+A = matmul(\+A,\+B,2,3,2);
+
+Tag\+: multiplication 
+
+Definition at line 45 of file Matrix.\+C.
+
+
+
+Referenced by inverse().
+
+
+\begin{DoxyCode}
+45                                                                   \{
+46     
+47     \textcolor{keyword}{static} \textcolor{keywordtype}{double}** result;
+48     
+49     result = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[a];
+50     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++) *(result + i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [c];
+51 
+52     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+53         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<c;j++) *(*(result+i)+j) = 0.;
+54     \}
+55 
+56     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+57         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<c;j++)\{
+58             \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0;k<b;k++)\{
+59                 *(*(result+i)+j) += *(*(mat1+i)+k) * *(*(mat2+k)+j);
+60             \}
+61         \}
+62     \}
+63 
+64     \textcolor{keywordflow}{return} result;
+65 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8C_a9c8e250ed43efa25186112ef66e4491f}\label{Matrix_8C_a9c8e250ed43efa25186112ef66e4491f}} 
+\index{Matrix.\+C@{Matrix.\+C}!print@{print}}
+\index{print@{print}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Print matrix. 
+
+print matrix of given size
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (double$\ast$$\ast$) matrix to print \\
+\hline
+{\em a} & (int) number of rows of A \\
+\hline
+{\em b} & (int) number of columns of A\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+stdout(matrix A)
+\end{DoxyReturn}
+Example\+:
+
+print(\+A,2,3);
+
+Tag\+: print 
+
+Definition at line 225 of file Matrix.\+C.
+
+
+
+Referenced by inverse().
+
+
+\begin{DoxyCode}
+225                                     \{
+226     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+227         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++) printf(\textcolor{stringliteral}{"%10.4e "}, *(*(A+i)+j));
+228         printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+229     \}
+230 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8C_a238af1517ec23a6f0279ec5ee6364d6a}\label{Matrix_8C_a238af1517ec23a6f0279ec5ee6364d6a}} 
+\index{Matrix.\+C@{Matrix.\+C}!sub@{sub}}
+\index{sub@{sub}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{sub()}{sub()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ sub (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{,  }\item[{double $\ast$$\ast$}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Elementwise subtraction. 
+
+mat1 -\/ mat2 = result Two input matrices must be in same shape axb
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em mat1,mat2} & (double$\ast$$\ast$) matrices to be subtracted \\
+\hline
+{\em a} & (int) number of rows of mat1 and mat2 \\
+\hline
+{\em b} & (int) number of columns of mat1 and mat2\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double$\ast$$\ast$)
+\end{DoxyReturn}
+Example\+:
+
+A = sub(\+A,\+B,2,2);
+
+Tag\+: subtract, element wise 
+
+Definition at line 31 of file Matrix.\+C.
+
+
+\begin{DoxyCode}
+31                                                         \{
+32     
+33     \textcolor{keyword}{static} \textcolor{keywordtype}{double}** result;
+34 
+35     result = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[a];
+36     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++) *(result+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [b];
+37 
+38     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+39         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++) *(*(result+i)+j) = *(*(mat1+i)+j) - *(*(mat2+i)+j);
+40     \}
+41 
+42     \textcolor{keywordflow}{return} result;
+43 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8C_a66ed07559a4d20174040e69f551a5431}\label{Matrix_8C_a66ed07559a4d20174040e69f551a5431}} 
+\index{Matrix.\+C@{Matrix.\+C}!sum@{sum}}
+\index{sum@{sum}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{sum()}{sum()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ sum (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{,  }\item[{double $\ast$$\ast$}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Elementwise summation. 
+
+mat1 + mat2 = result Two input matrices must be in same shape axb
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em mat1,mat2} & (double$\ast$$\ast$) matrices to be added \\
+\hline
+{\em a} & (int) number of rows of mat1 and mat2 \\
+\hline
+{\em b} & (int) number of columns of mat1 and mat2\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double$\ast$$\ast$)
+\end{DoxyReturn}
+Example\+:
+
+A = sum(\+A,\+B,2,2);
+
+Tag\+: add, sum, element wise 
+
+Definition at line 17 of file Matrix.\+C.
+
+
+\begin{DoxyCode}
+17                                                         \{
+18     
+19     \textcolor{keyword}{static} \textcolor{keywordtype}{double}** result;
+20 
+21     result = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[a];
+22     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++) *(result+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [b];
+23 
+24     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+25         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++) *(*(result+i)+j) = *(*(mat1+i)+j) + *(*(mat2+i)+j);
+26     \}
+27 
+28     \textcolor{keywordflow}{return} result;
+29 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8C_ab64223fbcc37cc3af54071e71067d05a}\label{Matrix_8C_ab64223fbcc37cc3af54071e71067d05a}} 
+\index{Matrix.\+C@{Matrix.\+C}!transpose@{transpose}}
+\index{transpose@{transpose}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ transpose (\begin{DoxyParamCaption}\item[{double $\ast$$\ast$}]{,  }\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMatrix}{Matrix} transpose. 
+
+mat$^\wedge$T
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em mat} & (double$\ast$$\ast$) matrix to be transposed \\
+\hline
+{\em a} & (int) number of rows of mat \\
+\hline
+{\em b} & (int) number of columns of mat\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double$\ast$$\ast$) transposed mat
+\end{DoxyReturn}
+Example\+:
+
+A\+\_\+T = transpose(\+A,2,2);
+
+Tag\+: transpose 
+
+Definition at line 67 of file Matrix.\+C.
+
+
+
+Referenced by inverse().
+
+
+\begin{DoxyCode}
+67                                               \{
+68 
+69     \textcolor{keyword}{static} \textcolor{keywordtype}{double}** result;
+70 
+71     result = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[b];
+72     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<b;i++) *(result+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [a];
+73 
+74     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+75         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++)\{
+76             *(*(result+j)+i) = *(*(mat+i)+j);
+77         \}
+78     \}
+79 
+80     \textcolor{keywordflow}{return} result;
+81 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Matrix_8C_ab8a4d647abae3e1b8dd318f1db696bc6}\label{Matrix_8C_ab8a4d647abae3e1b8dd318f1db696bc6}} 
+\index{Matrix.\+C@{Matrix.\+C}!zero@{zero}}
+\index{zero@{zero}!Matrix.\+C@{Matrix.\+C}}
+\paragraph{\texorpdfstring{zero()}{zero()}}
+{\footnotesize\ttfamily double$\ast$$\ast$ zero (\begin{DoxyParamCaption}\item[{int}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize matrix. 
+
+Create and initialize matrix elements to zero
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em a} & (int) number of rows \\
+\hline
+{\em b} & (int) number of columns\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double$\ast$$\ast$) zero matrix of size axb
+\end{DoxyReturn}
+Example\+:
+
+A = zero(2,3);
+
+Tag\+: initalize zero 
+
+Definition at line 212 of file Matrix.\+C.
+
+
+\begin{DoxyCode}
+212                            \{
+213     \textcolor{keyword}{static} \textcolor{keywordtype}{double}** result;
+214     
+215     result = \textcolor{keyword}{new} \textcolor{keywordtype}{double}*[a];
+216     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++) *(result+i) = \textcolor{keyword}{new} \textcolor{keywordtype}{double} [b];
+217 
+218     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<a;i++)\{
+219         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<b;j++) *(*(result+i)+j) = 0.;
+220     \}
+221     
+222     \textcolor{keywordflow}{return} result;
+223 \}
+\end{DoxyCode}

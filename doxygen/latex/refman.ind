@@ -1,0 +1,67 @@
+\begin{theindex}
+
+  \item {identity}
+    \subitem {Matrix.\+C}, \hyperpage{4}
+    \subitem {Matrix.\+h}, \hyperpage{13}
+  \item {inverse}
+    \subitem {Matrix.\+C}, \hyperpage{4}
+    \subitem {Matrix.\+h}, \hyperpage{14}
+
+  \indexspace
+
+  \item {mat\+\_\+copy}
+    \subitem {Matrix.\+C}, \hyperpage{6}
+    \subitem {Matrix.\+h}, \hyperpage{16}
+  \item {matmul}
+    \subitem {Matrix.\+C}, \hyperpage{7}
+    \subitem {Matrix.\+h}, \hyperpage{17}
+  \item {Matrix}, \hyperpage{2}
+  \item {Matrix.\+C}, \hyperpage{3}
+    \subitem {identity}, \hyperpage{4}
+    \subitem {inverse}, \hyperpage{4}
+    \subitem {mat\+\_\+copy}, \hyperpage{6}
+    \subitem {matmul}, \hyperpage{7}
+    \subitem {print}, \hyperpage{8}
+    \subitem {sub}, \hyperpage{9}
+    \subitem {sum}, \hyperpage{10}
+    \subitem {transpose}, \hyperpage{10}
+    \subitem {zero}, \hyperpage{11}
+  \item {Matrix.\+h}, \hyperpage{12}
+    \subitem {identity}, \hyperpage{13}
+    \subitem {inverse}, \hyperpage{14}
+    \subitem {mat\+\_\+copy}, \hyperpage{16}
+    \subitem {matmul}, \hyperpage{17}
+    \subitem {print}, \hyperpage{18}
+    \subitem {sub}, \hyperpage{18}
+    \subitem {sum}, \hyperpage{19}
+    \subitem {transpose}, \hyperpage{20}
+    \subitem {zero}, \hyperpage{21}
+
+  \indexspace
+
+  \item {print}
+    \subitem {Matrix.\+C}, \hyperpage{8}
+    \subitem {Matrix.\+h}, \hyperpage{18}
+
+  \indexspace
+
+  \item {sub}
+    \subitem {Matrix.\+C}, \hyperpage{9}
+    \subitem {Matrix.\+h}, \hyperpage{18}
+  \item {sum}
+    \subitem {Matrix.\+C}, \hyperpage{10}
+    \subitem {Matrix.\+h}, \hyperpage{19}
+
+  \indexspace
+
+  \item {transpose}
+    \subitem {Matrix.\+C}, \hyperpage{10}
+    \subitem {Matrix.\+h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {zero}
+    \subitem {Matrix.\+C}, \hyperpage{11}
+    \subitem {Matrix.\+h}, \hyperpage{21}
+
+\end{theindex}

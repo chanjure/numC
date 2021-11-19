@@ -1,6 +1,6 @@
 #include<math.h>
-#include"Matrix_gsl.h"
-#include"Stats.h"
+#include<numC/Matrix_gsl.h>
+#include<numC/Stats.h>
 
 #include<iostream> //for dignose
 

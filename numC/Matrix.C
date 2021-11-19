@@ -1,42 +1,19 @@
-//==========================================//
-//																					//
-// Matrix.C																	//
-// ----------------------------------------	//	
-// Various matrix operations								//
-//																					//
-// ----------------------------------------	//
-// Mar 19, 2021															//
-// C J Park																	//
-// chanjure@snu.ac.kr												//
-//																					//
-//==========================================//
+/**
+ * @file Matrix.C
+ * @brief Various matrix operations
+ * @date Mar 19, 2021
+ * @author C J Park \n chanjure@snu.ac.kr
+ */
 
 // Library dependencies
 #include <iostream>
-#include "Matrix.h"
+#include <numC/Matrix.h>
 
 
 // ========================== //
 // Matrix operation functions //
 // ========================== //
 
-// =====================
-// Elementwise summation
-// =====================
-// mat1 + mat2 = result
-// Two input matrices must be in same shape axb
-// =====================
-// Parameters:
-// ---------------------
-// double** mat1 & mat2 : matrices to be added
-// int a : number of rows of mat1 and mat2
-// int b : number of columns of mat1 and mat2
-//
-// Output:
-// double** result
-// ---------------------
-// Tag : add, sum, element wise 
-//======================
 double** sum(double** mat1, double** mat2, int a, int b){
     
     static double** result;
@@ -51,23 +28,6 @@ double** sum(double** mat1, double** mat2, int a, int b){
     return result;
 }
 
-// =====================
-// Elementwise subtraction
-// =====================
-// mat1 - mat2 = result
-// Two input matrices must be in same shape axb
-// =====================
-// Parameters:
-// ---------------------
-// double** mat1 & mat2 : matrices to be added
-// int a : number of rows of mat1 and mat2
-// int b : number of columns of mat1 and mat2
-//
-// Output:
-// double** result
-// ---------------------
-// Tag : subtract, element wise 
-//======================
 double** sub(double** mat1, double** mat2, int a, int b){
     
     static double** result;
@@ -82,24 +42,6 @@ double** sub(double** mat1, double** mat2, int a, int b){
     return result;
 }
 
-// =====================
-// Matrix multiplication
-// =====================
-// mat1 * mat2 = result
-// number of column of mat1 must match number of column of mat2
-// =====================
-// Parameters:
-// ---------------------
-// double** mat1 & mat2 : matrices to be multiplied
-// int a : number of rows of mat1
-// int b : number of columns of mat1 = number of rows of mat2
-// int c : number of columns of mat2
-//
-// Output:
-// double** result : matrix of dimension a x c
-// ---------------------
-// Tag : multiplication 
-//======================
 double** matmul(double** mat1, double** mat2, int a, int b, int c){
     
     static double** result;
@@ -122,22 +64,6 @@ double** matmul(double** mat1, double** mat2, int a, int b, int c){
     return result;
 }
 
-// =====================
-// Matrix transpose
-// =====================
-// mat^T
-// =====================
-// Parameters:
-// ---------------------
-// double** mat : matrices to be transposed
-// int a : number of rows of mat
-// int b : number of columns of mat
-//
-// Output:
-// double** result : transposed mat
-// ---------------------
-// Tag : transpose
-//======================
 double** transpose(double** mat, int a, int b){
 
     static double** result;
@@ -159,22 +85,6 @@ double** transpose(double** mat, int a, int b){
 // Util functions //
 // ============== //
 
-// =====================
-// Identity matrix
-// =====================
-// create identity matrix of given size
-// square matrix will be created
-// =====================
-// Parameters:
-// ---------------------
-// int a : dimension of identity matrix
-// double val : value to initialize (default = 1.)
-//
-// Output:
-// double** result : identity matrix
-// ---------------------
-// Tag : identity initialize
-//======================
 double** identity(int a, double val){
     static double** result;
 
@@ -191,22 +101,6 @@ double** identity(int a, double val){
     return result;
 }
 
-// =====================
-// Hard copy matrix
-// =====================
-// create hard copy of given matrix
-// =====================
-// Parameters:
-// ---------------------
-// double** mat : matrix to copy
-// int a : number of rows of mat
-// int b : number of columns of mat
-//
-// Output:
-// double** result : hard copy of mat
-// ---------------------
-// Tag : hard copy initialize
-//======================
 double** mat_copy(double** mat, int a, int b){
     static double** result;
 
@@ -220,22 +114,6 @@ double** mat_copy(double** mat, int a, int b){
     return result;
 }
 
-// =====================
-// Matrix left inverse
-// =====================
-// Matrix left inverse using Gaussian reducion
-// =====================
-// Parameters:
-// ---------------------
-// double** A : matrix to inverse
-// int a : number of rows of A
-// int b : number of columns of A
-//
-// Output:
-// double** result : left inverse of A
-// ---------------------
-// Tag : left inverse gaussian reduction
-//======================
 double** inverse(double** A, int a, int b){
 
     static double** result; // output matmul(invsqA, A.T)
@@ -331,21 +209,6 @@ double** inverse(double** A, int a, int b){
     return result;
 }
 
-// =====================
-// Initializ matrix
-// =====================
-// Create and initialize matrix elements to zero
-// =====================
-// Parameters:
-// ---------------------
-// int a : number of rows
-// int b : number of columns
-//
-// Output:
-// double** result : zero matrix of size a x b
-// ---------------------
-// Tag : initialize zero
-//======================
 double** zero(int a, int b){
     static double** result;
     
@@ -359,22 +222,6 @@ double** zero(int a, int b){
     return result;
 }
 
-// =====================
-// Print matrix
-// =====================
-// print matrix of given size
-// =====================
-// Parameters:
-// ---------------------
-// double** A : matrix to print
-// int a : number of rows of A
-// int b : number of columns of A
-//
-// Output: void
-// std out : matrix A
-// ---------------------
-// Tag : print
-//======================
 void print(double** A, int a, int b){
     for(int i=0;i<a;i++){
         for(int j=0;j<b;j++) printf("%10.4e ", *(*(A+i)+j));

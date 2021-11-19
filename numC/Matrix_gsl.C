@@ -3,10 +3,10 @@ Imp : Could be improved
 
    */
 
-#include<numC/Matrix_gsl.h>
 #include<gsl/gsl_vector.h>
 #include<gsl/gsl_matrix.h>
 #include<gsl/gsl_linalg.h>
+#include<numC/Matrix_gsl.h>
 
 // Utill functions
 void Matrix::init(int n, int m, std::string name){

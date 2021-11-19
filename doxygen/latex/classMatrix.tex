@@ -1,0 +1,102 @@
+\hypertarget{classMatrix}{}\subsection{Matrix Class Reference}
+\label{classMatrix}\index{Matrix@{Matrix}}
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrix_aca9d2af58b3c9a5c2576512941a58c5b}\label{classMatrix_aca9d2af58b3c9a5c2576512941a58c5b}} 
+{\bfseries Matrix} (std\+::string name=\char`\"{}New\char`\"{})
+\item 
+\mbox{\Hypertarget{classMatrix_afd59ecd3d47891114d99f21351fcc665}\label{classMatrix_afd59ecd3d47891114d99f21351fcc665}} 
+{\bfseries Matrix} (int n, int m, std\+::string name=\char`\"{}New\char`\"{})
+\item 
+\mbox{\Hypertarget{classMatrix_aaceda49b8ba637f622d4ec3b427ff045}\label{classMatrix_aaceda49b8ba637f622d4ec3b427ff045}} 
+{\bfseries Matrix} (const \hyperlink{classMatrix}{Matrix} \&A)
+\item 
+\mbox{\Hypertarget{classMatrix_ae4726533935968ad55e45f7c39c79d19}\label{classMatrix_ae4726533935968ad55e45f7c39c79d19}} 
+void {\bfseries init} (int, int, std\+::string name=\char`\"{}New\char`\"{})
+\item 
+\mbox{\Hypertarget{classMatrix_a985b8ff0bd1f3bbd19cfa5fe9b9b9f31}\label{classMatrix_a985b8ff0bd1f3bbd19cfa5fe9b9b9f31}} 
+\hyperlink{classMatrix}{Matrix} \& {\bfseries operator=} (const \hyperlink{classMatrix}{Matrix} \&A)
+\item 
+\mbox{\Hypertarget{classMatrix_ad154bc94a144a368cbcb7bd40e51feaa}\label{classMatrix_ad154bc94a144a368cbcb7bd40e51feaa}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries operator\%} (const \hyperlink{classMatrix}{Matrix} \&A)
+\item 
+\mbox{\Hypertarget{classMatrix_a60a307403e3482007487dfd60c8461b8}\label{classMatrix_a60a307403e3482007487dfd60c8461b8}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries operator+} (const \hyperlink{classMatrix}{Matrix} \&A)
+\item 
+\mbox{\Hypertarget{classMatrix_a528d48ea764ca99d8e0d4df6e86804dd}\label{classMatrix_a528d48ea764ca99d8e0d4df6e86804dd}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries operator-\/} (const \hyperlink{classMatrix}{Matrix} \&A)
+\item 
+\mbox{\Hypertarget{classMatrix_a4bd84764194d66b36df5134992bbfdcc}\label{classMatrix_a4bd84764194d66b36df5134992bbfdcc}} 
+\hyperlink{classMatrix}{Matrix} \& {\bfseries operator$\ast$=} (double a)
+\item 
+\mbox{\Hypertarget{classMatrix_ae0dffcc49e94db64e5f85f49622b4f3b}\label{classMatrix_ae0dffcc49e94db64e5f85f49622b4f3b}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries operator/=} (double a)
+\item 
+\mbox{\Hypertarget{classMatrix_ad9db57feb80b159997d121a8d55c055c}\label{classMatrix_ad9db57feb80b159997d121a8d55c055c}} 
+void {\bfseries printM} (std\+::string=\char`\"{}matrix\char`\"{})
+\item 
+\mbox{\Hypertarget{classMatrix_a347fdd0b8505557b28376d36fd965647}\label{classMatrix_a347fdd0b8505557b28376d36fd965647}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries flat} ()
+\item 
+\mbox{\Hypertarget{classMatrix_af7403d8c02553a4fba253380e4e0bc40}\label{classMatrix_af7403d8c02553a4fba253380e4e0bc40}} 
+double {\bfseries trace} ()
+\item 
+\mbox{\Hypertarget{classMatrix_a4e2ee8ad0e6621315f6b68034114ba74}\label{classMatrix_a4e2ee8ad0e6621315f6b68034114ba74}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries T} ()
+\item 
+\mbox{\Hypertarget{classMatrix_a84d6198a8bbb5637b85ecb4c58e34cb8}\label{classMatrix_a84d6198a8bbb5637b85ecb4c58e34cb8}} 
+void {\bfseries as\+Mat} (double $\ast$$\ast$)
+\item 
+\mbox{\Hypertarget{classMatrix_a9ab1bacd38c2090314786bba2844da3c}\label{classMatrix_a9ab1bacd38c2090314786bba2844da3c}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries diag} ()
+\item 
+\mbox{\Hypertarget{classMatrix_a8975aa6c948bcc13588fbc580bd975ed}\label{classMatrix_a8975aa6c948bcc13588fbc580bd975ed}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries clip} (double, std\+::string=\char`\"{}upper\char`\"{})
+\item 
+\mbox{\Hypertarget{classMatrix_a7611488b98f9c291c86cb2ea47b1b56a}\label{classMatrix_a7611488b98f9c291c86cb2ea47b1b56a}} 
+\hyperlink{classMatrix}{Matrix} {\bfseries inv} ()
+\item 
+\mbox{\Hypertarget{classMatrix_ace95025dd985ddaa6c1ed72e8b464a0a}\label{classMatrix_ace95025dd985ddaa6c1ed72e8b464a0a}} 
+double {\bfseries det} ()
+\item 
+\mbox{\Hypertarget{classMatrix_a57f323186a181dd2ed6519b0f86f4338}\label{classMatrix_a57f323186a181dd2ed6519b0f86f4338}} 
+void {\bfseries eig} ()
+\item 
+\mbox{\Hypertarget{classMatrix_a6edacac0a051ed4a8e4c93adb6ff3de2}\label{classMatrix_a6edacac0a051ed4a8e4c93adb6ff3de2}} 
+double {\bfseries min} (std\+::string=\char`\"{}matrix\char`\"{})
+\item 
+\mbox{\Hypertarget{classMatrix_ad290e450fead39c024466cf0ba602c7e}\label{classMatrix_ad290e450fead39c024466cf0ba602c7e}} 
+double {\bfseries max} (std\+::string=\char`\"{}matrix\char`\"{})
+\end{DoxyCompactItemize}
+\subsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classMatrix_a39466a5c9a5f18d84d02f9fb7d060561}\label{classMatrix_a39466a5c9a5f18d84d02f9fb7d060561}} 
+int {\bfseries shape} \mbox{[}2\mbox{]}
+\item 
+\mbox{\Hypertarget{classMatrix_a4b26a049df7108da3a46d4457afc3735}\label{classMatrix_a4b26a049df7108da3a46d4457afc3735}} 
+double $\ast$$\ast$ {\bfseries matrix}
+\item 
+\mbox{\Hypertarget{classMatrix_adb7fc5a84b4aa01e1417646cfc048fa8}\label{classMatrix_adb7fc5a84b4aa01e1417646cfc048fa8}} 
+double $\ast$$\ast$ {\bfseries eigval}
+\item 
+\mbox{\Hypertarget{classMatrix_ad12a5a14ff1acaf9862701b6f174fefb}\label{classMatrix_ad12a5a14ff1acaf9862701b6f174fefb}} 
+double $\ast$$\ast$ {\bfseries eigvec}
+\item 
+\mbox{\Hypertarget{classMatrix_ab15f3c0e2ef820cc3aa6d58475b15443}\label{classMatrix_ab15f3c0e2ef820cc3aa6d58475b15443}} 
+std\+::string {\bfseries name}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+
+
+Definition at line 9 of file Matrix\+\_\+gsl.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Matrix\+\_\+gsl.\+h\item 
+Matrix\+\_\+gsl.\+C\end{DoxyCompactItemize}
