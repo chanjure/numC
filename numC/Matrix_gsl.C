@@ -3,7 +3,7 @@ Imp : Could be improved
 
    */
 
-#include"Matrix_gsl.h"
+#include<numC/Matrix_gsl.h>
 #include<gsl/gsl_vector.h>
 #include<gsl/gsl_matrix.h>
 #include<gsl/gsl_linalg.h>

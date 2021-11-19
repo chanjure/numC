@@ -314,7 +314,7 @@ mandir = ${datarootdir}/man
 mkdir_p = $(MKDIR_P)
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/chanjure/.local
+prefix = /usr/local
 program_transform_name = s,x,x,
 psdir = ${docdir}
 runstatedir = ${localstatedir}/run
@@ -326,9 +326,8 @@ target_alias =
 top_build_prefix = 
 top_builddir = .
 top_srcdir = .
-SUBDIRS = numC
-AM_CPPFLAGS = -I$(srcdir)/numC
 ACLOCAL_AMFLAGS = -I m4
+SUBDIRS = numC
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 

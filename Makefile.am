@@ -1,3 +1,2 @@
-SUBDIRS = numC
-AM_CPPFLAGS = -I$(srcdir)/numC
 ACLOCAL_AMFLAGS = -I m4
+SUBDIRS = numC

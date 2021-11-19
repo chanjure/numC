@@ -1,0 +1,10 @@
+autoscan: warning: missing AC_CHECK_FUNCS([pow]) wanted by: 
+	numC/Stats.C:47
+	numC/Stats.C:57
+	numC/Stats.C:149
+	numC/Stats.C:166
+autoscan: warning: missing AC_CHECK_FUNCS([sqrt]) wanted by: 
+	numC/Stats.C:152
+	numC/Stats.C:169
+autoscan: warning: missing AC_PROG_RANLIB wanted by: 
+	ltmain.sh:3772
