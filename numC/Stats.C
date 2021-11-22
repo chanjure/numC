@@ -1,3 +1,9 @@
+/**
+ * @file Stats.C
+ * @brief Statistics tools
+ */
+
+// Library dependencies
 #include<math.h>
 #include<numC/Matrix_gsl.h>
 #include<numC/Stats.h>
