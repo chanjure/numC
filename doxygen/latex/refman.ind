@@ -1,41 +1,71 @@
 \begin{theindex}
 
+  \item {ave}
+    \subitem {Stats.\+C}, \hyperpage{24}
+    \subitem {Stats.\+h}, \hyperpage{33}
+
+  \indexspace
+
+  \item {B\+S\+\_\+error}
+    \subitem {Stats.\+C}, \hyperpage{24}
+    \subitem {Stats.\+h}, \hyperpage{33}
+
+  \indexspace
+
+  \item {chisqr}
+    \subitem {Stats.\+C}, \hyperpage{25}
+    \subitem {Stats.\+h}, \hyperpage{34}
+  \item {cov}
+    \subitem {Stats.\+C}, \hyperpage{26}
+    \subitem {Stats.\+h}, \hyperpage{35}
+
+  \indexspace
+
   \item {identity}
     \subitem {Matrix.\+C}, \hyperpage{4}
-    \subitem {Matrix.\+h}, \hyperpage{13}
-  \item {inverse}
-    \subitem {Matrix.\+C}, \hyperpage{4}
     \subitem {Matrix.\+h}, \hyperpage{14}
+  \item {inverse}
+    \subitem {Matrix.\+C}, \hyperpage{5}
+    \subitem {Matrix.\+h}, \hyperpage{15}
+
+  \indexspace
+
+  \item {J\+K\+\_\+error}
+    \subitem {Stats.\+C}, \hyperpage{27}
+    \subitem {Stats.\+h}, \hyperpage{36}
+  \item {J\+K\+\_\+resample}
+    \subitem {Stats.\+C}, \hyperpage{28}
+    \subitem {Stats.\+h}, \hyperpage{37}
 
   \indexspace
 
   \item {mat\+\_\+copy}
-    \subitem {Matrix.\+C}, \hyperpage{6}
-    \subitem {Matrix.\+h}, \hyperpage{16}
+    \subitem {Matrix.\+C}, \hyperpage{7}
+    \subitem {Matrix.\+h}, \hyperpage{17}
   \item {matmul}
     \subitem {Matrix.\+C}, \hyperpage{7}
     \subitem {Matrix.\+h}, \hyperpage{17}
   \item {Matrix}, \hyperpage{2}
   \item {Matrix.\+C}, \hyperpage{3}
     \subitem {identity}, \hyperpage{4}
-    \subitem {inverse}, \hyperpage{4}
-    \subitem {mat\+\_\+copy}, \hyperpage{6}
+    \subitem {inverse}, \hyperpage{5}
+    \subitem {mat\+\_\+copy}, \hyperpage{7}
     \subitem {matmul}, \hyperpage{7}
     \subitem {print}, \hyperpage{8}
     \subitem {sub}, \hyperpage{9}
     \subitem {sum}, \hyperpage{10}
-    \subitem {transpose}, \hyperpage{10}
-    \subitem {zero}, \hyperpage{11}
-  \item {Matrix.\+h}, \hyperpage{12}
-    \subitem {identity}, \hyperpage{13}
-    \subitem {inverse}, \hyperpage{14}
-    \subitem {mat\+\_\+copy}, \hyperpage{16}
+    \subitem {transpose}, \hyperpage{11}
+    \subitem {zero}, \hyperpage{12}
+  \item {Matrix.\+h}, \hyperpage{13}
+    \subitem {identity}, \hyperpage{14}
+    \subitem {inverse}, \hyperpage{15}
+    \subitem {mat\+\_\+copy}, \hyperpage{17}
     \subitem {matmul}, \hyperpage{17}
     \subitem {print}, \hyperpage{18}
-    \subitem {sub}, \hyperpage{18}
-    \subitem {sum}, \hyperpage{19}
-    \subitem {transpose}, \hyperpage{20}
-    \subitem {zero}, \hyperpage{21}
+    \subitem {sub}, \hyperpage{19}
+    \subitem {sum}, \hyperpage{20}
+    \subitem {transpose}, \hyperpage{21}
+    \subitem {zero}, \hyperpage{22}
 
   \indexspace
 
@@ -45,23 +75,50 @@
 
   \indexspace
 
+  \item {sample\+\_\+ave}
+    \subitem {Stats.\+C}, \hyperpage{29}
+    \subitem {Stats.\+h}, \hyperpage{38}
+  \item {Stats.\+C}, \hyperpage{23}
+    \subitem {ave}, \hyperpage{24}
+    \subitem {B\+S\+\_\+error}, \hyperpage{24}
+    \subitem {chisqr}, \hyperpage{25}
+    \subitem {cov}, \hyperpage{26}
+    \subitem {J\+K\+\_\+error}, \hyperpage{27}
+    \subitem {J\+K\+\_\+resample}, \hyperpage{28}
+    \subitem {sample\+\_\+ave}, \hyperpage{29}
+    \subitem {var}, \hyperpage{30}
+  \item {Stats.\+h}, \hyperpage{31}
+    \subitem {ave}, \hyperpage{33}
+    \subitem {B\+S\+\_\+error}, \hyperpage{33}
+    \subitem {chisqr}, \hyperpage{34}
+    \subitem {cov}, \hyperpage{35}
+    \subitem {J\+K\+\_\+error}, \hyperpage{36}
+    \subitem {J\+K\+\_\+resample}, \hyperpage{37}
+    \subitem {sample\+\_\+ave}, \hyperpage{38}
+    \subitem {var}, \hyperpage{39}
   \item {sub}
     \subitem {Matrix.\+C}, \hyperpage{9}
-    \subitem {Matrix.\+h}, \hyperpage{18}
-  \item {sum}
-    \subitem {Matrix.\+C}, \hyperpage{10}
     \subitem {Matrix.\+h}, \hyperpage{19}
-
-  \indexspace
-
-  \item {transpose}
+  \item {sum}
     \subitem {Matrix.\+C}, \hyperpage{10}
     \subitem {Matrix.\+h}, \hyperpage{20}
 
   \indexspace
 
-  \item {zero}
+  \item {transpose}
     \subitem {Matrix.\+C}, \hyperpage{11}
     \subitem {Matrix.\+h}, \hyperpage{21}
+
+  \indexspace
+
+  \item {var}
+    \subitem {Stats.\+C}, \hyperpage{30}
+    \subitem {Stats.\+h}, \hyperpage{39}
+
+  \indexspace
+
+  \item {zero}
+    \subitem {Matrix.\+C}, \hyperpage{12}
+    \subitem {Matrix.\+h}, \hyperpage{22}
 
 \end{theindex}

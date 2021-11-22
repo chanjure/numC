@@ -1,0 +1,513 @@
+\hypertarget{Stats_8C}{}\subsection{Stats.\+C File Reference}
+\label{Stats_8C}\index{Stats.\+C@{Stats.\+C}}
+
+
+Statistics tools.  
+
+
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$num\+C/\+Matrix\+\_\+gsl.\+h$>$}\newline
+{\ttfamily \#include $<$num\+C/\+Stats.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+Include dependency graph for Stats.\+C\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{Stats_8C__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{Stats_8C_ae39b64f2f2f119f1fd195d6ca0583a6f}{ave} (\hyperlink{classMatrix}{Matrix} A, int axis)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMatrix}{Matrix} average. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{Stats_8C_a2e68f0f11b60ca80c496e3afb4b7cc01}{var} (\hyperlink{classMatrix}{Matrix} A, int axis)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classMatrix}{Matrix} variance. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{Stats_8C_ac9e2628dd0e3b331f9113cf8d731b10c}{cov} (\hyperlink{classMatrix}{Matrix} A, int axis)
+\begin{DoxyCompactList}\small\item\em Covariance matrix. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} $\ast$ \hyperlink{Stats_8C_a143c09048292af2563e2996d2c2f4922}{J\+K\+\_\+resample} (\hyperlink{classMatrix}{Matrix} A, int axis)
+\begin{DoxyCompactList}\small\item\em Jackknife resample. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{Stats_8C_affd6f6d5163a812e041030361c401f90}{sample\+\_\+ave} (\hyperlink{classMatrix}{Matrix} $\ast$A, int l)
+\begin{DoxyCompactList}\small\item\em Sample average. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{Stats_8C_a0285e96e7ca20265cc8af9eafc5bbb3b}{J\+K\+\_\+error} (\hyperlink{classMatrix}{Matrix} $\ast$A, int l)
+\begin{DoxyCompactList}\small\item\em Jackknife standard deviation. \end{DoxyCompactList}\item 
+\hyperlink{classMatrix}{Matrix} \hyperlink{Stats_8C_ae2e8a930a8ea255b6deb8f17f4d45206}{B\+S\+\_\+error} (\hyperlink{classMatrix}{Matrix} $\ast$A, int l)
+\begin{DoxyCompactList}\small\item\em Bootstrap standard deviation. \end{DoxyCompactList}\item 
+double \hyperlink{Stats_8C_acf58aad875a53a890de07e717fa561b9}{chisqr} (\hyperlink{classMatrix}{Matrix} y\+\_\+bar, \hyperlink{classMatrix}{Matrix} c\+\_\+inv, \hyperlink{classMatrix}{Matrix} f)
+\begin{DoxyCompactList}\small\item\em Chi square. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+Statistics tools. 
+
+
+
+\subsubsection{Function Documentation}
+\mbox{\Hypertarget{Stats_8C_ae39b64f2f2f119f1fd195d6ca0583a6f}\label{Stats_8C_ae39b64f2f2f119f1fd195d6ca0583a6f}} 
+\index{Stats.\+C@{Stats.\+C}!ave@{ave}}
+\index{ave@{ave}!Stats.\+C@{Stats.\+C}}
+\paragraph{\texorpdfstring{ave()}{ave()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} ave (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix}}]{A,  }\item[{int}]{axis = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMatrix}{Matrix} average. 
+
+Calculate average along the given axis
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (\hyperlink{classMatrix}{Matrix}) \hyperlink{classMatrix}{Matrix} to calculate \\
+\hline
+{\em axis} & (int) axis to calculate default = 1\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (\hyperlink{classMatrix}{Matrix}) a vector (collapsed \hyperlink{classMatrix}{Matrix})
+\end{DoxyReturn}
+Example\+:
+
+B = ave(\+A, 0);
+
+Tag\+: average vector matrix 
+
+Definition at line 13 of file Stats.\+C.
+
+
+
+Referenced by cov(), and var().
+
+
+\begin{DoxyCode}
+13                               \{
+14   
+15   \textcolor{keywordtype}{int} n = A.shape[0];
+16   \textcolor{keywordtype}{int} m = A.shape[1];
+17 
+18   \textcolor{keywordflow}{if}(axis == 1)\{
+19 
+20     \hyperlink{classMatrix}{Matrix} result(n,1,\textcolor{stringliteral}{"ave"});
+21 
+22     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++)\{
+23       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<m;j++)\{
+24         result.matrix[i][0] += A.matrix[i][j]/(1.*m);
+25       \}
+26     \}
+27     
+28     \textcolor{keywordflow}{return} result;
+29   \}
+30   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (axis == 0)\{
+31     
+32     \hyperlink{classMatrix}{Matrix} result(1,m);
+33     
+34     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++)\{
+35       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<m;j++) result.matrix[0][j] += A.matrix[i][j]/(1.*n);
+36     \}
+37 
+38     \textcolor{keywordflow}{return} result;
+39   \}
+40 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Stats_8C_ae2e8a930a8ea255b6deb8f17f4d45206}\label{Stats_8C_ae2e8a930a8ea255b6deb8f17f4d45206}} 
+\index{Stats.\+C@{Stats.\+C}!B\+S\+\_\+error@{B\+S\+\_\+error}}
+\index{B\+S\+\_\+error@{B\+S\+\_\+error}!Stats.\+C@{Stats.\+C}}
+\paragraph{\texorpdfstring{B\+S\+\_\+error()}{BS\_error()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} B\+S\+\_\+error (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix} $\ast$}]{A,  }\item[{int}]{l }\end{DoxyParamCaption})}
+
+
+
+Bootstrap standard deviation. 
+
+Calculate standard deviation(sqrt(var), error) of Bootstrap resampled data
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (Matrix$\ast$) Bootstrap resampled data \\
+\hline
+{\em l} & (int) number of BS samples\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (Martix) collapsed array of Matrices
+\end{DoxyReturn}
+Example\+:
+
+A = B\+S\+\_\+error(\+B, 500);
+
+Tag\+: Bootstrap standard deviation error 
+
+Definition at line 163 of file Stats.\+C.
+
+
+
+References sample\+\_\+ave().
+
+
+\begin{DoxyCode}
+163                                  \{
+164   \textcolor{keywordtype}{int} n = A[0].shape[0];
+165   
+166   \hyperlink{classMatrix}{Matrix} A\_ave(n,1);
+167   A\_ave = \hyperlink{Stats_8C_affd6f6d5163a812e041030361c401f90}{sample\_ave}(A, l);
+168 
+169   \hyperlink{classMatrix}{Matrix} result(n,1);
+170 
+171   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++)\{
+172     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<l;j++) result.matrix[i][0] += pow(A[j].matrix[i][0] - A\_ave.matrix[i][0],2.) / (l-1.);
+173   \}
+174 
+175   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++) result.matrix[i][0] = sqrt(result.matrix[i][0]);
+176 
+177   \textcolor{keywordflow}{return} result;
+178 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Stats_8C_acf58aad875a53a890de07e717fa561b9}\label{Stats_8C_acf58aad875a53a890de07e717fa561b9}} 
+\index{Stats.\+C@{Stats.\+C}!chisqr@{chisqr}}
+\index{chisqr@{chisqr}!Stats.\+C@{Stats.\+C}}
+\paragraph{\texorpdfstring{chisqr()}{chisqr()}}
+{\footnotesize\ttfamily double chisqr (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix}}]{y\+\_\+bar,  }\item[{\hyperlink{classMatrix}{Matrix}}]{c\+\_\+inv,  }\item[{\hyperlink{classMatrix}{Matrix}}]{f }\end{DoxyParamCaption})}
+
+
+
+Chi square. 
+
+Calculate chi-\/square of given data chi$^\wedge$2 = (y\+\_\+bar -\/ f)$^\wedge$T C$^\wedge$-\/1 (y\+\_\+bar -\/ f)
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em y\+\_\+bar} & (\hyperlink{classMatrix}{Matrix}) vector containing an average of the data \\
+\hline
+{\em c\+\_\+inv} & (\hyperlink{classMatrix}{Matrix}) inverse of covariance matrix \\
+\hline
+{\em f} & (\hyperlink{classMatrix}{Matrix}) vector of fitting function values\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (double) chi$^\wedge$2 of given data and fitting function
+\end{DoxyReturn}
+Example\+:
+
+chisq = chiqr(\+Y\+\_\+bar, C\+\_\+inv, F);
+
+Tag\+: chi-\/square fitting 
+
+Definition at line 180 of file Stats.\+C.
+
+
+
+References matmul(), and sub().
+
+
+\begin{DoxyCode}
+180                                                    \{
+181 
+182   \textcolor{keywordtype}{double} result;
+183 
+184   result = \hyperlink{Matrix_8C_a74a9fe9c1d326c41a69926c97720f4d2}{matmul}(\hyperlink{Matrix_8C_a74a9fe9c1d326c41a69926c97720f4d2}{matmul}(\hyperlink{Matrix_8C_a238af1517ec23a6f0279ec5ee6364d6a}{sub}(y\_bar, f).T(), c\_inv), \hyperlink{Matrix_8C_a238af1517ec23a6f0279ec5ee6364d6a}{sub}(y\_bar, f)).matrix[0][0];
+185 
+186   \textcolor{keywordflow}{return} result;
+187 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Stats_8C_ac9e2628dd0e3b331f9113cf8d731b10c}\label{Stats_8C_ac9e2628dd0e3b331f9113cf8d731b10c}} 
+\index{Stats.\+C@{Stats.\+C}!cov@{cov}}
+\index{cov@{cov}!Stats.\+C@{Stats.\+C}}
+\paragraph{\texorpdfstring{cov()}{cov()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} cov (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix}}]{A,  }\item[{int}]{axis = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Covariance matrix. 
+
+Calculate covariance along the given axis
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (\hyperlink{classMatrix}{Matrix}) \hyperlink{classMatrix}{Matrix} of data \\
+\hline
+{\em axis} & (int) axis to calculate default = 0\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (\hyperlink{classMatrix}{Matrix}) covariance of vectors along axis
+\end{DoxyReturn}
+Example\+:
+
+C = cov(\+A, 0);
+
+Tag\+: covariance vector matrix 
+
+Definition at line 70 of file Stats.\+C.
+
+
+
+References ave().
+
+
+\begin{DoxyCode}
+70                               \{
+71   \textcolor{comment}{// Default : sample covariance}
+72 
+73   \textcolor{keywordtype}{int} n = A.shape[0];
+74   \textcolor{keywordtype}{int} m = A.shape[1];
+75   
+76   \textcolor{keywordflow}{if}(axis == 0)\{
+77     \hyperlink{classMatrix}{Matrix} A\_ave;
+78     A\_ave = \hyperlink{Stats_8C_ae39b64f2f2f119f1fd195d6ca0583a6f}{ave}(A, 1);
+79 
+80     \hyperlink{classMatrix}{Matrix} result(n,n);
+81 
+82     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++)\{
+83       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<n;j++)\{
+84         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0;k<m;k++)\{
+85           result.matrix[i][j] += (A.matrix[i][k] - A\_ave.matrix[i][0]) * (A.matrix[j][k] - A\_ave.matrix[j][
+      0])/(1.*m)/(m-1.);
+86         \}
+87       \}
+88     \}
+89 
+90     \textcolor{keywordflow}{return} result;
+91   \}
+92   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(axis == 1)\{
+93     \hyperlink{classMatrix}{Matrix} A\_ave = \hyperlink{Stats_8C_ae39b64f2f2f119f1fd195d6ca0583a6f}{ave}(A, 0);
+94 
+95     \hyperlink{classMatrix}{Matrix} result(m,m);
+96 
+97     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<m;i++)\{
+98       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<m;j++)\{
+99         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0;k<n;k++) result.matrix[i][j] += (A.matrix[k][i] - A\_ave.matrix[0][i]) * (A.matrix[k][j]
+       - A\_ave.matrix[0][j])/(1.*m)/(m-1.);
+100       \}
+101     \}
+102 
+103     \textcolor{keywordflow}{return} result;
+104   \}
+105 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Stats_8C_a0285e96e7ca20265cc8af9eafc5bbb3b}\label{Stats_8C_a0285e96e7ca20265cc8af9eafc5bbb3b}} 
+\index{Stats.\+C@{Stats.\+C}!J\+K\+\_\+error@{J\+K\+\_\+error}}
+\index{J\+K\+\_\+error@{J\+K\+\_\+error}!Stats.\+C@{Stats.\+C}}
+\paragraph{\texorpdfstring{J\+K\+\_\+error()}{JK\_error()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} J\+K\+\_\+error (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix} $\ast$}]{A,  }\item[{int}]{l }\end{DoxyParamCaption})}
+
+
+
+Jackknife standard deviation. 
+
+Calculate standard deviation(sqrt(var), error) of Jackknife resampled data
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (Matrix$\ast$) Jackknife resampled data \\
+\hline
+{\em l} & (int) number of JK samples (N)\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (\hyperlink{classMatrix}{Matrix}) collapsed array of Matrices
+\end{DoxyReturn}
+Example\+:
+
+A = J\+K\+\_\+error(\+B, 200);
+
+Tag\+: Jackknife standard deviation error 
+
+Definition at line 145 of file Stats.\+C.
+
+
+
+References sample\+\_\+ave().
+
+
+\begin{DoxyCode}
+145                                  \{
+146 
+147   \textcolor{keywordtype}{int} n = A[0].shape[0];
+148   
+149   \hyperlink{classMatrix}{Matrix} A\_ave(n,1);
+150   A\_ave = \hyperlink{Stats_8C_affd6f6d5163a812e041030361c401f90}{sample\_ave}(A, l);
+151 
+152   \hyperlink{classMatrix}{Matrix} result(n, 1);
+153 
+154   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++)\{
+155     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<l;j++) result.matrix[i][0] += pow(A[j].matrix[i][0] - A\_ave.matrix[i][0], 2.) /(1.*l)*(l-
+      1.);
+156   \}
+157 
+158   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++) result.matrix[i][0] = sqrt(result.matrix[i][0]);
+159 
+160   \textcolor{keywordflow}{return} result;
+161 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Stats_8C_a143c09048292af2563e2996d2c2f4922}\label{Stats_8C_a143c09048292af2563e2996d2c2f4922}} 
+\index{Stats.\+C@{Stats.\+C}!J\+K\+\_\+resample@{J\+K\+\_\+resample}}
+\index{J\+K\+\_\+resample@{J\+K\+\_\+resample}!Stats.\+C@{Stats.\+C}}
+\paragraph{\texorpdfstring{J\+K\+\_\+resample()}{JK\_resample()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix}$\ast$ J\+K\+\_\+resample (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix}}]{A,  }\item[{int}]{axis = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Jackknife resample. 
+
+Resample along the given axis It samples maximum amount of data (N samples)
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (\hyperlink{classMatrix}{Matrix}) \hyperlink{classMatrix}{Matrix} of data \\
+\hline
+{\em axis} & (int) axis to calculate default = 1\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (Matrix$\ast$) Array(\+Pointer) of matrix
+\end{DoxyReturn}
+Example\+:
+
+X = J\+K\+\_\+resample(\+A, 0);
+
+Tag\+: Jackknife resampling 
+
+Definition at line 107 of file Stats.\+C.
+
+
+\begin{DoxyCode}
+107                                        \{
+108   
+109   \textcolor{keywordtype}{int} n = A.shape[0];
+110   \textcolor{keywordtype}{int} m = A.shape[1];
+111 
+112   \hyperlink{classMatrix}{Matrix} *result;
+113   result = \textcolor{keyword}{new} \hyperlink{classMatrix}{Matrix} [m];
+114   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<m;i++) result[i].init(n, m-1);
+115 
+116   \textcolor{keywordtype}{int} p=0;
+117   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<m;i++)\{
+118     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<n;j++)\{
+119       p = 0;
+120       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0;k<m;k++)\{
+121         \textcolor{keywordflow}{if}(i != k)\{
+122           result[i].matrix[j][p] = A.matrix[j][k];
+123           p++;
+124         \}
+125       \}
+126     \}
+127   \}
+128 
+129   \textcolor{keywordflow}{return} result;
+130 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Stats_8C_affd6f6d5163a812e041030361c401f90}\label{Stats_8C_affd6f6d5163a812e041030361c401f90}} 
+\index{Stats.\+C@{Stats.\+C}!sample\+\_\+ave@{sample\+\_\+ave}}
+\index{sample\+\_\+ave@{sample\+\_\+ave}!Stats.\+C@{Stats.\+C}}
+\paragraph{\texorpdfstring{sample\+\_\+ave()}{sample\_ave()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} sample\+\_\+ave (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix} $\ast$}]{A,  }\item[{int}]{l }\end{DoxyParamCaption})}
+
+
+
+Sample average. 
+
+Calculate average of array(pointer) of Matrices
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (Matrix$\ast$) Pointer to \hyperlink{classMatrix}{Matrix} eg) resampled data \\
+\hline
+{\em l} & (int) number of JK samples (N)\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (\hyperlink{classMatrix}{Matrix}) collapsed array of Matrices
+\end{DoxyReturn}
+Example\+:
+
+A = sample\+\_\+ave(\+B, 200);
+
+Tag\+: Jackknife average 
+
+Definition at line 132 of file Stats.\+C.
+
+
+
+Referenced by B\+S\+\_\+error(), and J\+K\+\_\+error().
+
+
+\begin{DoxyCode}
+132                                    \{
+133 
+134   \textcolor{keywordtype}{int} n = A[0].shape[0];
+135 
+136   \hyperlink{classMatrix}{Matrix} result(n,1);
+137 
+138   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++)\{
+139     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<l;j++) result.matrix[i][0] += A[j].matrix[i][0]/(1.*l);
+140   \}
+141 
+142   \textcolor{keywordflow}{return} result;
+143 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{Stats_8C_a2e68f0f11b60ca80c496e3afb4b7cc01}\label{Stats_8C_a2e68f0f11b60ca80c496e3afb4b7cc01}} 
+\index{Stats.\+C@{Stats.\+C}!var@{var}}
+\index{var@{var}!Stats.\+C@{Stats.\+C}}
+\paragraph{\texorpdfstring{var()}{var()}}
+{\footnotesize\ttfamily \hyperlink{classMatrix}{Matrix} var (\begin{DoxyParamCaption}\item[{\hyperlink{classMatrix}{Matrix}}]{A,  }\item[{int}]{axis = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classMatrix}{Matrix} variance. 
+
+Calculate variance along the given axis
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em A} & (\hyperlink{classMatrix}{Matrix}) \hyperlink{classMatrix}{Matrix} to calculate \\
+\hline
+{\em axis} & (int) axis to calculate default = 1\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+result (\hyperlink{classMatrix}{Matrix}) a vector (collapsed \hyperlink{classMatrix}{Matrix})
+\end{DoxyReturn}
+Example\+:
+
+B = var(\+A,0);
+
+Tag\+: variance vector matrix 
+
+Definition at line 42 of file Stats.\+C.
+
+
+
+References ave().
+
+
+\begin{DoxyCode}
+42                               \{
+43   \textcolor{comment}{// Default : sample var}
+44 
+45   \textcolor{keywordtype}{int} n = A.shape[0];
+46   \textcolor{keywordtype}{int} m = A.shape[1];
+47 
+48   \textcolor{keywordflow}{if}(axis == 1)\{
+49     \hyperlink{classMatrix}{Matrix} A\_ave = \hyperlink{Stats_8C_ae39b64f2f2f119f1fd195d6ca0583a6f}{ave}(A, 1);
+50     \hyperlink{classMatrix}{Matrix} result(n,1);
+51 
+52     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++)\{
+53       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<m;j++) result.matrix[i][0] += pow(A.matrix[i][j] - A\_ave.matrix[i][0], 2.)/(1.*m)/(m - 
+      1.);
+54     \}
+55 
+56     \textcolor{keywordflow}{return} result;
+57   \}
+58   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(axis == 0)\{
+59     \hyperlink{classMatrix}{Matrix} A\_ave = \hyperlink{Stats_8C_ae39b64f2f2f119f1fd195d6ca0583a6f}{ave}(A, 0);
+60     \hyperlink{classMatrix}{Matrix} result(1,m);
+61     
+62     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n;i++)\{
+63       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j=0;j<m;j++) result.matrix[0][j] += pow(A.matrix[i][j] - A\_ave.matrix[0][j], 2.)/(1.*n)/(n - 
+      1.);
+64     \}
+65 
+66     \textcolor{keywordflow}{return} result;
+67   \}
+68 \}
+\end{DoxyCode}
