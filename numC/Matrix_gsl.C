@@ -87,7 +87,9 @@ Matrix Matrix::operator/(const Matrix &A){
 */
 // Matrix functions
 void Matrix::printM(std::string option){
-	std::cout<<this->name<<std::endl;
+	
+	if(this->name != "") std::cout<<this->name<<std::endl;
+	
 	if(!option.compare("matrix")){
 		for(int i=0;i<this->shape[0];i++){
 			for(int j=0;j<this->shape[1];j++) printf("%10.8f ",this->matrix[i][j]);

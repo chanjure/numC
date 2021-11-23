@@ -1,3 +1,14 @@
+/**
+ * @file Matrix_gsl.h
+ *
+ * @brief Matrix class and functions using gsl library
+ *
+ * @date Nov 23, 2021
+ * @author C J Park \n chanjure@snu.ac.kr
+ * @bug No known bugs.
+ * @version 1.0
+ */
+
 #ifndef MATRIX_GSL_H
 #define MATIRX_GSL_H
 
@@ -6,6 +17,17 @@
 #include<gsl/gsl_vector.h>
 #include<gsl/gsl_linalg.h>
 
+/**
+ * @class Matrix
+ *
+ * @brief This is Matrix class
+ *
+ * @details Matrix class contains double** matrix as a matrix elements containor.
+ * So Matrix A can be used with Matrix.h as putting A.matrix in to Matrix.h functions.
+ * Afterwards this matrix instance would likely to be private.
+ *
+ * Tag: Matrix Vector
+ */
 class Matrix{
 
 	private:
@@ -17,11 +39,11 @@ class Matrix{
 		double** eigvec;
 		std::string name;
 
-		Matrix(std::string name = "New"){
+		Matrix(std::string name = ""){
 			this->name = name;
 			this->matrix = NULL;
 		}
-		Matrix(int n, int m, std::string name = "New"){
+		Matrix(int n, int m, std::string name = ""){
 			this->init(n, m, name);
 		}
 		Matrix(const Matrix& A){
