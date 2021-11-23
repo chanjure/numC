@@ -1,8 +1,13 @@
-/* Tag Index
-Imp : Could be improved
+/**
+ * @file Matrix_gsl.C
+ * @brief Matrix class functions using gsl library
+ * partially compatible with Matrix.h
+ *
+ * Tag Index
+ * Imp : Could be improved
+ */
 
-   */
-
+// Library dependencies
 #include<gsl/gsl_vector.h>
 #include<gsl/gsl_matrix.h>
 #include<gsl/gsl_linalg.h>
