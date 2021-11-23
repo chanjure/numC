@@ -1,13 +1,13 @@
 \contentsline {section}{\numberline {1}Bug List}{1}{section.1}%
-\contentsline {section}{\numberline {2}Data Structure Index}{1}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Data Structures}{1}{subsection.2.1}%
+\contentsline {section}{\numberline {2}Data Structure Index}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Data Structures}{2}{subsection.2.1}%
 \contentsline {section}{\numberline {3}File Index}{2}{section.3}%
 \contentsline {subsection}{\numberline {3.1}File List}{2}{subsection.3.1}%
 \contentsline {section}{\numberline {4}Data Structure Documentation}{2}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Matrix Class Reference}{2}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Detailed Description}{3}{subsubsection.4.1.1}%
-\contentsline {section}{\numberline {5}File Documentation}{3}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C File Reference}{3}{subsection.5.1}%
+\contentsline {section}{\numberline {5}File Documentation}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Matrix.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C File Reference}{4}{subsection.5.1}%
 \contentsline {subsubsection}{\numberline {5.1.1}Detailed Description}{4}{subsubsection.5.1.1}%
 \contentsline {subsubsection}{\numberline {5.1.2}Function Documentation}{5}{subsubsection.5.1.2}%
 \contentsline {paragraph}{\numberline {5.1.2.1}identity()}{5}{paragraph.5.1.2.1}%
@@ -31,32 +31,38 @@
 \contentsline {paragraph}{\numberline {5.2.2.7}sum()}{20}{paragraph.5.2.2.7}%
 \contentsline {paragraph}{\numberline {5.2.2.8}transpose()}{21}{paragraph.5.2.2.8}%
 \contentsline {paragraph}{\numberline {5.2.2.9}zero()}{22}{paragraph.5.2.2.9}%
-\contentsline {subsection}{\numberline {5.3}Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gsl.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{23}{subsection.5.3}%
-\contentsline {subsubsection}{\numberline {5.3.1}Detailed Description}{24}{subsubsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.4}Stats.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C File Reference}{24}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.3}Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gsl.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C File Reference}{23}{subsection.5.3}%
+\contentsline {subsubsection}{\numberline {5.3.1}Detailed Description}{23}{subsubsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.4}Matrix\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}gsl.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{24}{subsection.5.4}%
 \contentsline {subsubsection}{\numberline {5.4.1}Detailed Description}{25}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}Function Documentation}{25}{subsubsection.5.4.2}%
-\contentsline {paragraph}{\numberline {5.4.2.1}ave()}{25}{paragraph.5.4.2.1}%
-\contentsline {paragraph}{\numberline {5.4.2.2}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error()}{26}{paragraph.5.4.2.2}%
-\contentsline {paragraph}{\numberline {5.4.2.3}chisqr()}{27}{paragraph.5.4.2.3}%
-\contentsline {paragraph}{\numberline {5.4.2.4}cov()}{28}{paragraph.5.4.2.4}%
-\contentsline {paragraph}{\numberline {5.4.2.5}J\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}K\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error()}{29}{paragraph.5.4.2.5}%
-\contentsline {paragraph}{\numberline {5.4.2.6}J\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}K\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}resample()}{30}{paragraph.5.4.2.6}%
-\contentsline {paragraph}{\numberline {5.4.2.7}sample\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ave()}{31}{paragraph.5.4.2.7}%
-\contentsline {paragraph}{\numberline {5.4.2.8}var()}{32}{paragraph.5.4.2.8}%
-\contentsline {subsection}{\numberline {5.5}Stats.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{33}{subsection.5.5}%
-\contentsline {subsubsection}{\numberline {5.5.1}Detailed Description}{33}{subsubsection.5.5.1}%
-\contentsline {subsubsection}{\numberline {5.5.2}Function Documentation}{34}{subsubsection.5.5.2}%
-\contentsline {paragraph}{\numberline {5.5.2.1}ave()}{34}{paragraph.5.5.2.1}%
-\contentsline {paragraph}{\numberline {5.5.2.2}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error()}{35}{paragraph.5.5.2.2}%
-\contentsline {paragraph}{\numberline {5.5.2.3}chisqr()}{35}{paragraph.5.5.2.3}%
-\contentsline {paragraph}{\numberline {5.5.2.4}cov()}{36}{paragraph.5.5.2.4}%
-\contentsline {paragraph}{\numberline {5.5.2.5}J\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}K\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error()}{37}{paragraph.5.5.2.5}%
-\contentsline {paragraph}{\numberline {5.5.2.6}J\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}K\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}resample()}{38}{paragraph.5.5.2.6}%
-\contentsline {paragraph}{\numberline {5.5.2.7}sample\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ave()}{39}{paragraph.5.5.2.7}%
-\contentsline {paragraph}{\numberline {5.5.2.8}var()}{40}{paragraph.5.5.2.8}%
-\contentsline {subsection}{\numberline {5.6}Utils.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{41}{subsection.5.6}%
-\contentsline {subsubsection}{\numberline {5.6.1}Detailed Description}{41}{subsubsection.5.6.1}%
-\contentsline {subsubsection}{\numberline {5.6.2}Function Documentation}{42}{subsubsection.5.6.2}%
-\contentsline {paragraph}{\numberline {5.6.2.1}readfile()}{42}{paragraph.5.6.2.1}%
-\contentsline {section}{Index}{45}{section*.18}%
+\contentsline {subsection}{\numberline {5.5}Stats.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C File Reference}{25}{subsection.5.5}%
+\contentsline {subsubsection}{\numberline {5.5.1}Detailed Description}{26}{subsubsection.5.5.1}%
+\contentsline {subsubsection}{\numberline {5.5.2}Function Documentation}{26}{subsubsection.5.5.2}%
+\contentsline {paragraph}{\numberline {5.5.2.1}ave()}{26}{paragraph.5.5.2.1}%
+\contentsline {paragraph}{\numberline {5.5.2.2}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error()}{27}{paragraph.5.5.2.2}%
+\contentsline {paragraph}{\numberline {5.5.2.3}chisqr()}{28}{paragraph.5.5.2.3}%
+\contentsline {paragraph}{\numberline {5.5.2.4}cov()}{29}{paragraph.5.5.2.4}%
+\contentsline {paragraph}{\numberline {5.5.2.5}J\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}K\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error()}{30}{paragraph.5.5.2.5}%
+\contentsline {paragraph}{\numberline {5.5.2.6}J\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}K\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}resample()}{31}{paragraph.5.5.2.6}%
+\contentsline {paragraph}{\numberline {5.5.2.7}sample\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ave()}{32}{paragraph.5.5.2.7}%
+\contentsline {paragraph}{\numberline {5.5.2.8}var()}{33}{paragraph.5.5.2.8}%
+\contentsline {subsection}{\numberline {5.6}Stats.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{34}{subsection.5.6}%
+\contentsline {subsubsection}{\numberline {5.6.1}Detailed Description}{34}{subsubsection.5.6.1}%
+\contentsline {subsubsection}{\numberline {5.6.2}Function Documentation}{35}{subsubsection.5.6.2}%
+\contentsline {paragraph}{\numberline {5.6.2.1}ave()}{35}{paragraph.5.6.2.1}%
+\contentsline {paragraph}{\numberline {5.6.2.2}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}S\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error()}{36}{paragraph.5.6.2.2}%
+\contentsline {paragraph}{\numberline {5.6.2.3}chisqr()}{36}{paragraph.5.6.2.3}%
+\contentsline {paragraph}{\numberline {5.6.2.4}cov()}{37}{paragraph.5.6.2.4}%
+\contentsline {paragraph}{\numberline {5.6.2.5}J\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}K\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}error()}{38}{paragraph.5.6.2.5}%
+\contentsline {paragraph}{\numberline {5.6.2.6}J\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}K\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}resample()}{39}{paragraph.5.6.2.6}%
+\contentsline {paragraph}{\numberline {5.6.2.7}sample\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}ave()}{40}{paragraph.5.6.2.7}%
+\contentsline {paragraph}{\numberline {5.6.2.8}var()}{41}{paragraph.5.6.2.8}%
+\contentsline {subsection}{\numberline {5.7}Utils.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}C File Reference}{42}{subsection.5.7}%
+\contentsline {subsubsection}{\numberline {5.7.1}Detailed Description}{42}{subsubsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.2}Function Documentation}{43}{subsubsection.5.7.2}%
+\contentsline {paragraph}{\numberline {5.7.2.1}readfile()}{43}{paragraph.5.7.2.1}%
+\contentsline {subsection}{\numberline {5.8}Utils.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h File Reference}{44}{subsection.5.8}%
+\contentsline {subsubsection}{\numberline {5.8.1}Detailed Description}{44}{subsubsection.5.8.1}%
+\contentsline {subsubsection}{\numberline {5.8.2}Function Documentation}{45}{subsubsection.5.8.2}%
+\contentsline {paragraph}{\numberline {5.8.2.1}readfile()}{45}{paragraph.5.8.2.1}%
+\contentsline {section}{Index}{47}{section*.22}%
