@@ -17,5 +17,5 @@ in main.C
 
 ```
 #include <iostream>
-#include <numC>
+#include <numC/Matrix_gsl.h> // core library
 ```
