@@ -55,7 +55,7 @@ Stats.lo: Stats.C /usr/include/stdc-predef.h /usr/include/c++/7/math.h \
  /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib.h Matrix_gsl.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h ../numC/Matrix_gsl.h \
  /usr/include/c++/7/iostream /usr/include/c++/7/ostream \
  /usr/include/c++/7/ios /usr/include/c++/7/iosfwd \
  /usr/include/c++/7/bits/stringfwd.h /usr/include/c++/7/bits/memoryfwd.h \
@@ -211,7 +211,7 @@ Stats.lo: Stats.C /usr/include/stdc-predef.h /usr/include/c++/7/math.h \
  /usr/lib/gcc/x86_64-linux-gnu/7/include/float.h \
  /usr/local/include/gsl/gsl_precision.h /usr/local/include/gsl/gsl_nan.h \
  /usr/local/include/gsl/gsl_pow_int.h /usr/local/include/gsl/gsl_minmax.h \
- /usr/local/include/gsl/gsl_blas.h Stats.h
+ /usr/local/include/gsl/gsl_blas.h ../numC/Stats.h
 
 /usr/include/stdc-predef.h:
 
@@ -339,7 +339,7 @@ Stats.lo: Stats.C /usr/include/stdc-predef.h /usr/include/c++/7/math.h \
 
 /usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
-Matrix_gsl.h:
+../numC/Matrix_gsl.h:
 
 /usr/include/c++/7/iostream:
 
@@ -727,4 +727,4 @@ Matrix_gsl.h:
 
 /usr/local/include/gsl/gsl_blas.h:
 
-Stats.h:
+../numC/Stats.h:

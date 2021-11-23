@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sub',['sub',['../Matrix_8C.html#a238af1517ec23a6f0279ec5ee6364d6a',1,'sub(double **mat1, double **mat2, int a, int b):&#160;Matrix.C'],['../Matrix_8h.html#a173e1efd1a2864cfd7af0024b56915b4',1,'sub(double **, double **, int, int):&#160;Matrix.C']]],
-  ['sum',['sum',['../Matrix_8C.html#a66ed07559a4d20174040e69f551a5431',1,'sum(double **mat1, double **mat2, int a, int b):&#160;Matrix.C'],['../Matrix_8h.html#a21f00d2a3c50f395256c7800fefc6cf0',1,'sum(double **, double **, int, int):&#160;Matrix.C']]]
+  ['identity',['identity',['../Matrix_8C.html#affa4629470e427c236e2a7ac925e4e73',1,'identity(int a, double val):&#160;Matrix.C'],['../Matrix_8h.html#a195dfe7c58ef9a9210e854a11a60e5d8',1,'identity(int, double val=1.):&#160;Matrix.C']]],
+  ['inverse',['inverse',['../Matrix_8C.html#a19adaf60a005ffeb9071a395d0ee069f',1,'inverse(double **A, int a, int b):&#160;Matrix.C'],['../Matrix_8h.html#ac0497c746531e3d9117e80b16cfe7b18',1,'inverse(double **, int, int):&#160;Matrix.C']]]
 ];

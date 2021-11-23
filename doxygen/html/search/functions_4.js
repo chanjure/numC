@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['transpose',['transpose',['../Matrix_8C.html#ab64223fbcc37cc3af54071e71067d05a',1,'transpose(double **mat, int a, int b):&#160;Matrix.C'],['../Matrix_8h.html#add8d97520d6f45f114ee07b3b331c29d',1,'transpose(double **, int, int):&#160;Matrix.C']]]
+  ['jk_5ferror',['JK_error',['../Stats_8C.html#a0285e96e7ca20265cc8af9eafc5bbb3b',1,'JK_error(Matrix *A, int l):&#160;Stats.C'],['../Stats_8h.html#a0285e96e7ca20265cc8af9eafc5bbb3b',1,'JK_error(Matrix *A, int l):&#160;Stats.C']]],
+  ['jk_5fresample',['JK_resample',['../Stats_8C.html#a143c09048292af2563e2996d2c2f4922',1,'JK_resample(Matrix A, int axis):&#160;Stats.C'],['../Stats_8h.html#a7195a46887f9beaaac1bc5238818ef64',1,'JK_resample(Matrix A, int axis=1):&#160;Stats.C']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['print',['print',['../Matrix_8C.html#a9c8e250ed43efa25186112ef66e4491f',1,'print(double **A, int a, int b):&#160;Matrix.C'],['../Matrix_8h.html#aa64d0eab19c69e019b28eda004b3a804',1,'print(double **, int, int):&#160;Matrix.C']]]
+  ['chisqr',['chisqr',['../Stats_8C.html#acf58aad875a53a890de07e717fa561b9',1,'chisqr(Matrix y_bar, Matrix c_inv, Matrix f):&#160;Stats.C'],['../Stats_8h.html#acf58aad875a53a890de07e717fa561b9',1,'chisqr(Matrix y_bar, Matrix c_inv, Matrix f):&#160;Stats.C']]],
+  ['cov',['cov',['../Stats_8C.html#ac9e2628dd0e3b331f9113cf8d731b10c',1,'cov(Matrix A, int axis):&#160;Stats.C'],['../Stats_8h.html#adcae8e0ffa58204a0438aed644fb3937',1,'cov(Matrix A, int axis=0):&#160;Stats.C']]]
 ];

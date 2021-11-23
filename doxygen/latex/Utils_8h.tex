@@ -1,0 +1,120 @@
+\hypertarget{Utils_8h}{}\subsection{Utils.\+h File Reference}
+\label{Utils_8h}\index{Utils.\+h@{Utils.\+h}}
+
+
+File io uitls This functions are not compatible with Matrix\+\_\+gsl functions. This is compatible with \hyperlink{classMatrix}{Matrix} functions.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{Utils_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{Utils_8h_a2798321f6823b728dda0aa7e343c6e52}{readfile} (const char $\ast$fname, double $\ast$$\ast$x, double $\ast$$\ast$y, int n\+\_\+x=7, int n\+\_\+y=200)
+\begin{DoxyCompactList}\small\item\em readfile \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Detailed Description}
+File io uitls This functions are not compatible with Matrix\+\_\+gsl functions. This is compatible with \hyperlink{classMatrix}{Matrix} functions. 
+
+\begin{DoxyDate}{Date}
+Nov 23, 2021 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+C J Park ~\newline
+ \href{mailto:chanjure@snu.ac.kr}{\tt chanjure@snu.\+ac.\+kr} 
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000004}{Bug}]No known bugs. \end{DoxyRefDesc}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\subsubsection{Function Documentation}
+\mbox{\Hypertarget{Utils_8h_a2798321f6823b728dda0aa7e343c6e52}\label{Utils_8h_a2798321f6823b728dda0aa7e343c6e52}} 
+\index{Utils.\+h@{Utils.\+h}!readfile@{readfile}}
+\index{readfile@{readfile}!Utils.\+h@{Utils.\+h}}
+\paragraph{\texorpdfstring{readfile()}{readfile()}}
+{\footnotesize\ttfamily void readfile (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fname,  }\item[{double $\ast$$\ast$}]{x,  }\item[{double $\ast$$\ast$}]{y,  }\item[{int}]{n\+\_\+x = {\ttfamily 7},  }\item[{int}]{n\+\_\+y = {\ttfamily 200} }\end{DoxyParamCaption})}
+
+
+
+readfile 
+
+read file with specific format. To be generalized.
+
+Parameters\+: 
+\begin{DoxyParams}{Parameters}
+{\em fname} & (const char$\ast$) file name to read \\
+\hline
+{\em x} & (double$\ast$$\ast$) data points \\
+\hline
+{\em y} & (double$\ast$$\ast$) data values \\
+\hline
+{\em n\+\_\+x} & (int) number of data points (default = 7) \\
+\hline
+{\em n\+\_\+y} & (int) number of data values (default = 200)\\
+\hline
+\end{DoxyParams}
+Returns\+: \begin{DoxyReturn}{Returns}
+void
+\end{DoxyReturn}
+Example\+:
+
+readfile(data6, X, Y, 7, 200);
+
+Tag\+: file io read file 
+
+Definition at line 5 of file Utils.\+C.
+
+
+\begin{DoxyCode}
+5                                                                               \{
+6   
+7   FILE *data;
+8   \textcolor{keywordtype}{char} buff[255];
+9   std::string X = \textcolor{stringliteral}{"X"};
+10   std::string data\_str = \textcolor{stringliteral}{"DATA"};
+11 
+12   \textcolor{keywordtype}{int} count=0;
+13   \textcolor{keywordtype}{double} temp=0.;
+14 
+15   data = fopen(fname,\textcolor{stringliteral}{"r"});
+16   
+17   \textcolor{keywordflow}{while}(fscanf(data,\textcolor{stringliteral}{"%s"},buff)!=EOF)\{
+18     \textcolor{keywordflow}{if}(!X.compare(buff))\{
+19       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n\_x;i++)\{
+20         fscanf(data, \textcolor{stringliteral}{"%lf"}, &temp);
+21         *(*(x+i)+0) = temp;
+22       \}
+23       \textcolor{keywordflow}{continue};
+24     \}
+25     
+26     \textcolor{keywordflow}{if}(!data\_str.compare(buff))\{
+27       fscanf(data, \textcolor{stringliteral}{"%s"},buff);
+28       \textcolor{keywordflow}{continue};
+29     \}
+30 
+31     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<n\_x;i++)\{
+32       fscanf(data,\textcolor{stringliteral}{"%lf"},&temp);
+33       *(*(y+i)+count) = temp;
+34     \}
+35     count++;
+36   \}
+37 
+38   fclose(data);
+39 
+40   \textcolor{comment}{/*for(int i=0;i<7;i++) printf("%8.5f\(\backslash\)n",*(*(x+i)+0));}
+41 \textcolor{comment}{  for(int i=0;i<7;i++)\{}
+42 \textcolor{comment}{    for(int j=0;j<200;j++) printf("%8.5f\(\backslash\)t",*(*(y+i)+j));}
+43 \textcolor{comment}{    printf("\(\backslash\)n");}
+44 \textcolor{comment}{  \}*/}
+45 \}
+\end{DoxyCode}

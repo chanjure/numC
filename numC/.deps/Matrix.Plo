@@ -134,7 +134,7 @@ Matrix.lo: Matrix.C /usr/include/stdc-predef.h \
  /usr/include/c++/7/bits/locale_facets.tcc \
  /usr/include/c++/7/bits/basic_ios.tcc \
  /usr/include/c++/7/bits/ostream.tcc /usr/include/c++/7/istream \
- /usr/include/c++/7/bits/istream.tcc Matrix.h
+ /usr/include/c++/7/bits/istream.tcc ../numC/Matrix.h
 
 /usr/include/stdc-predef.h:
 
@@ -476,4 +476,4 @@ Matrix.lo: Matrix.C /usr/include/stdc-predef.h \
 
 /usr/include/c++/7/bits/istream.tcc:
 
-Matrix.h:
+../numC/Matrix.h:
