@@ -12,7 +12,6 @@
 #define STATS_H
 
 // Library dependencies
-#include <numC/Matrix_gsl.h>
 
 /**
  * @brief Matrix average
