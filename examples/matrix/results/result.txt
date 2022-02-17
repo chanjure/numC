@@ -1,0 +1,82 @@
+Matrices can be initialized with a name
+eg) Matrix A(2,2,'A')
+
+Utils::printM() is a utility to print a matrix
+It can print three object.
+printM('matrix') or printM() prints matrix elements.
+printM('eigval') prints eigenvalue
+printM('eigvec') prints eigenvector
+note that, to print eigval and eigvec, you must run A.eig() to calculate it first.
+
+Print matrix A initialized with name 'A'
+A
+0.00000000 0.00000000 
+0.00000000 0.00000000 
+Print matrix B initialized without name
+0.00000000 0.00000000 
+0.00000000 0.00000000 
+and they are automatically initialized to zeros
+
+Setting values of A, B
+Print assigned values
+A
+0.00000000 1.00000000 
+1.00000000 2.00000000 
+0.00000000 10.00000000 
+1.00000000 11.00000000 
+
+Matrix::c_(A,B) concatenates AB along column
+0.00000000 1.00000000 0.00000000 10.00000000 
+1.00000000 2.00000000 1.00000000 11.00000000 
+
+Matrix::r_(A,B) concatenates AB along row
+0.00000000 1.00000000 
+1.00000000 2.00000000 
+0.00000000 10.00000000 
+1.00000000 11.00000000 
+
+Matrix::trace() returns trace of A : 2.000000
+
+Matrix::T() returns transpose matrix of B
+0.00000000 1.00000000 
+10.00000000 11.00000000 
+
+Percent symbol between A,B is A x B
+1.00000000 11.00000000 
+2.00000000 32.00000000 
+
+Matrix::eig() calculates the eigenvalue and eigenvector
+33.91036769 0.29489506 
+
+(Matrix::max()) Maximum of eigenvalue of A x B : 33.910368
+Eigenvector of A x B
+-0.32561845 -0.94550126 
+-0.94550126 0.32561845 
+
+(Matrix::det()) Determinant of E : 10.000000 
+
+Elementwise operation of matrix
+A+B
+0.00000000 11.00000000 
+2.00000000 13.00000000 
+A-B
+0.00000000 -9.00000000 
+0.00000000 -9.00000000 
+A.B
+0.00000000 10.00000000 
+1.00000000 22.00000000 
+A/B
+      -nan 0.10000000 
+1.00000000 0.18181818 
+
+Scalar and matrix product
+A*2.
+0.00000000 2.00000000 
+2.00000000 4.00000000 
+A/2.
+0.00000000 0.50000000 
+0.50000000 1.00000000 
+
+(Matrix::clip(val,'upper' or 'lower')) clipping value in A larger or lower than val
+0.00000000 1.00000000 
+1.00000000 0.00000000 
