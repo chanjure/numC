@@ -169,18 +169,22 @@ struct CMRG{
 /**
  * @brief Fibonacci RNG
  *
- * This is Multiple Recursive Generator
- * 
+ * This is Lagged Fibinacci generator
+ * on a seed of 55 values, choosing 0(55) and 24.
+ *
+ * I_{n} = I_{n-k} - I_{n-j} (mod m), 0<j<k
+ *
+ * This code and pairs are from Numerical Recipes v3 p354
  *
  * Period : 
- * Diehard : 
+ * Diehard : fails "birthday test"
  * TestU01 :
  *
  * Parameters:
- * @param a (int) multiplier
- * @param c (int) increment
- * @param m (int) modulus
- * @param I0 (int) seed
+ * @param dtab (double) List of random seed
+ * @param dd (double) I_{n}
+ * @param inext (int) j = 24
+ * @param inextp (int) k = 55
  *
  * Returns
  * @return returns 0
@@ -190,6 +194,24 @@ struct CMRG{
  *
  * Tag: LCG RNG
  */
-struct Fib{
+struct FIB{
+	double dtab[55], dd;
+	int inext, inextp;
+	
+	FIB(unsigned long long I0) : inext(0), inextp(24) {
+		LCG init(I0);
+		for (int k=0;k<55;k++) dtab[k] = init.uniform();
+	}
+
+	double uniform(){
+		if (++inext == 55) inext = 0;
+		if (++inextp == 55) inextp = 0;
+		dd = dtab[inext] - dtab[inextp];
+		if (dd < 0) dd += 1.0;
+		return (dtab[inext] = dd);
+	}
+	inline unsigned long long randint(){
+		return (unsigned long long) (uniform()*18446744074709551615.0);
+	}
 };
 #endif
