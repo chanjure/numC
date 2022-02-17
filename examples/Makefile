@@ -9,7 +9,8 @@
 
 CC = g++
 CFLAGS = -g -O3 -Wall -fexceptions
-LDLIBS = -L/usr/local/lib -lnumC -lgsl -lgslcblas -lm # Hirachy from right to left
+#LDLIBS = -L/usr/local/lib -lnumC -lgsl -lgslcblas -lm # Hirachy from right to left
+LDLIBS = -I../../numC -L../../numC -lgsl -lgslcblas -lm
 
 SRCS := $(wildcard *.C)
 HDRS := $(wildcard *.h)
